@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>花库专题</title>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/animate.css" rel="stylesheet" media="all">
+ <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+      <div class="banner dis_none wow fadeInUp animated"><img src="images/banner.jpg"></div>
+      <div class="top_banner wow fadeInUp animated"><img src="images/m_banner.jpg"></div>
+      
+       <div class="index_bg1 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_01.png"></div>
+      </div>
+      
+       <div class="index_bg wow fadeInUp animated">
+              <div class="index_container"><img  src="images/cai_01.png"></div>
+      </div>
+      
+       <div class="index_bghei wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_02.png"></div>
+      </div>
+      
+       <div class="index_bg wow fadeInUp animated">
+              <div class="index_container"><img  src="images/cai_02.png"></div>
+      </div>
+      
+       <div class="index_bg3 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_04.png"></div>
+      </div>
+      
+       <div class="index_bg wow fadeInUp animated">
+              <div class="index_container"><img  src="images/cai_03.png"></div>
+      </div>
+      
+    
+      <div class="index_bg4 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_05.png"></div>
+      </div>
+      
+       <div class="index_bg wow fadeInUp animated">
+              <div class="index_container"><img  src="images/cai_04.png"></div>
+      </div>
+      
+      <div class="index_bg4 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_06.png"></div>
+      </div>
+      
+      <div class="index_bg wow fadeInUp animated">
+              <div class="index_container"><img  src="images/cai_05.png"></div>
+      </div>
+      
+      <div class="index_bg4 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_07.png"></div>
+      </div>
+      
+      <div class="index_bghei wow fadeInUp animated">
+              <div class="index_bg5"></div>
+              <div class="index_container"><img src="images/index_09.png"></div>
+      </div>
+      
+      <div class="index_bg wow fadeInUp animated join" >
+              <div class="index_container"><img  src="images/cai_06.png"></div>
+      </div>
+      
+      <div class="index_bg4 wow fadeInUp animated">
+              <div class="index_container"><img src="images/index_10.png"></div>
+      </div>
+      
+      <div class="contact wow fadeInUp animated">
+            <div class="row index_container">
+                   <div class="col-md-4 col-xs-8  logo_bg">
+                         <img src="images/index_11.jpg">
+                   </div>
+                   <div class="col-md-8 col-xs-12">
+                       <div class="con_bor">
+                               <form id="signup" method="post" action="#">
+                         <div class="row">
+                                <div class="col-xs-5 col-md-2 wi1"><span>姓名：</span></div>       
+                                 <div class="col-xs-12 col-md-6">
+                                        <div class="wi1"><input name="userName" type="text" value="" placeholder="您的姓名" datatype="z2-10"></div>
+                                 </div>
+                         </div>
+                         
+                         <div class="row">
+                                 <div class="col-xs-4 col-md-2 wi1"><span>电话：</span></div> 
+                                 <div class="col-xs-12 col-md-4">
+                                        <div class="wi1"><input name="tel" type="text" value="" placeholder="联系电话" datatype="tel"></div>
+                                 </div>
+                         </div>
+                         
+                       <div class="row">
+                                 <div class="col-xs-4 col-md-2 wi1"><span>留言：</span></div> 
+                                 <div class="col-xs-12 col-md-10">
+                                          <div class="liuyan"><textarea id="message" name="info[content]" placeholder="请输入您的留言"></textarea></div>
+                                 </div>
+                      </div>
+                      
+                       <div class="col-xs-12 col-md-4 col-md-offset-4">
+                      <input class="zixun" name="" type="submit" value="提&nbsp;&nbsp;交">
+                      </div>
+ 
+                      </form>
+                      </div>
+                   </div>
+      </div>
+      </div>
+      
+        <div class="foot wow fadeInUp animated">
+              <div class="index_container">
+          Copyright&nbsp;©&nbsp;郑州姐夫家餐饮管理咨询有限公司 版权所有 豫ICP备16031526号-1</div>
+      </div>
+	
+ <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+  
+   <!--      渐入版块       -->   
+    <script src="js/wow.min.js"></script>
+    
+    <script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+//返回顶部
+$(function(){	
+	$(window).scroll(function() {		
+		if($(window).scrollTop() >= 100){ //向下滚动像素大于这个值时，即出现~
+			$('.actGotop').fadeIn(500); //淡入的时间，越小出现的越快~
+		}else{    
+			$('.actGotop').fadeOut(500); //淡出的时间，越小消失的越快~
+		}  
+	});
+	$('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);}); //火箭动画停留时间，越小消失的越快~
+});
+</script>
+<script type="text/javascript"  src="js/common.js"></script>
+</body>
+</html>
