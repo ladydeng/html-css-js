@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+ <button onclick="doPrint3()">打印</button>
+
+<!--startprint-->
+<div id="printcontent">
+    <table border="1" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr  style="font-size: 18px;">
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>lili</td>
+                    <td>女</td>
+                    <td>郑州市金水区</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>lili</td>
+                    <td>女</td>
+                    <td>郑州市金水区</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>lili</td>
+                    <td>女</td>
+                    <td>郑州市金水区</td>
+                </tr>
+            </tbody>
+        </tbody>
+    </table>
+</div>
+<!--endprint-->
+
+<script type='text/javascript'>
+function doPrint3(){
+    
+    //判断iframe是否存在，不存在则创建iframe
+    var iframe=document.getElementById("print-iframe");
+    if(!iframe){  
+            var el = document.getElementById("printcontent");
+            iframe = document.createElement('IFRAME');
+            var doc = null;
+            iframe.setAttribute("id", "print-iframe");
+            iframe.setAttribute('style', 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;');
+            document.body.appendChild(iframe);
+            doc = iframe.contentWindow.document;
+            //这里可以自定义样式
+            doc.write('<style media="print">@page {size: auto;margin: 0mm;}</style>'); //解决出现页眉页脚和路径的问题
+            doc.write('<div>' + el.innerHTML + '</div>');
+            doc.close();
+            iframe.contentWindow.focus();            
+    }
+    setTimeout(function(){ iframe.contentWindow.print();},50)  //解决第一次样式不生效的问题
+    if (navigator.userAgent.indexOf("MSIE") > 0){
+        document.body.removeChild(iframe);
+    }   
+}
+</script>
+ </body>
+</html>

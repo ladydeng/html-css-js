@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时：天-时-分-秒</title>
+    <style>
+        /*  */
+        .downtime-box{
+            width: 250px;
+            height: 308px;
+            background: url(./img/djs_bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            position: fixed;
+            top: 20%;
+            right: 10%;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .downtime-box a{
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: inherit;
+        }
+
+        .close-icon{
+            text-align: right;
+        }
+
+        .blessing{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .d-list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .d-item{
+            width: 53px;
+            height: 61px;
+            background: url(./img/djs_tu2.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0 2px;
+            font-size: 44px;
+            color: #D7000F;
+            font-weight: bold;
+            text-align: center;
+            line-height: 61px;
+            position: relative;
+        }
+
+        .d-item::after{
+            content: "";
+            width: 96%;
+            height: 2px;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .days{
+            width: 50px;
+            height: 30px;
+            background: #D7000F;
+            font-size: 16px;
+            color: rgb(248, 222, 135);
+            text-align: center;
+            line-height: 30px;
+            border-radius: 8px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="downtime-box" id="downtimebox">
+       <a href="Javascript:void(0)">
+            <div class="close-icon" onclick="closeBox()">
+                <img src="./img/djs_tu3.png" alt="">
+            </div>
+            <div class="blessing">
+                <img src="./img/djs_tu1.png" alt="">
+            </div>
+            <div class="d-list">
+                <div class="d-item first"></div>
+                <div class="d-item second"></div>
+            </div>
+            <div class="days">Days</div>
+       </a>
+    </div>
+
+    <script>
+        function CountDown(year, month, day, hours) {
+            let now = new Date();
+            let endDate = new Date(year, month - 1, day, hours);
+            let leftTime = endDate.getTime() - now.getTime();//计算剩余的毫秒数
+            if (leftTime <= 0) {
+                leftTime = 0;
+            }
+            let leftsecond = parseInt(leftTime / 1000);//计算剩余的秒数
+            day = Math.floor(leftsecond / (60 * 60 * 24));
+            let hour = Math.floor((leftsecond - day * 24 * 60 * 60) / 3600);
+            let minute = Math.floor((leftsecond - day * 24 * 60 * 60 - hour * 3600) / 60);
+            let second = Math.floor(leftTime / 1000 % 60, 10);
+            // return `${day}天${hour}小时${minute}分钟${second}秒`;
+            if(day > 9){
+                let arr = day.toString().split("")
+                document.getElementsByClassName("first")[0].innerHTML = arr[0]
+                document.getElementsByClassName("second")[0].innerHTML = arr[1]
+            }else{
+                if(day <= 0){
+                    document.getElementById("downtimebox").style.display = 'none'
+                }
+
+                document.getElementsByClassName("first")[0].innerHTML = '0'
+                document.getElementsByClassName("second")[0].innerHTML = day
+            }
+        }
+        //直接调用即可
+        // setInterval(function(){
+            CountDown(2022, 9, 25, 0)
+        // }, 1000)
+
+        function closeBox(){
+            document.getElementById("downtimebox").style.display = 'none'
+        }
+    </script>
+</body>
+</html>

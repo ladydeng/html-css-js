@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="./jquery-1.10.2.min.js"></script>
+<style> 
+.move{
+	width:258px;
+	height:110px;
+	background:red;
+	position:fixed;
+	animation:myfirst 30s linear infinite;
+	-webkit-animation:myfirst 30s linear infinite; /* Safari and Chrome */
+}
+
+.indexPc{
+    position: relative;
+}
+
+.indexPc img{
+	width:258px;
+	height:110px;
+}
+
+.closeIcon{
+    position: absolute;
+	right: 0px;
+	font-size: 14px;
+}
+
+@keyframes myfirst
+{
+	0%   {background:red; left:50%; top:0%;}
+	25%  {background:yellow; left:calc(100% - 258px); top:calc(50% - 110px);}
+	50%  {background:blue; left:calc(50% - 258px); top:calc(100% - 110px);}
+	75%  {background:green; left:0%; top:calc(50% - 110px);}
+	100% {background:red; left:calc(50% - 258px); top:0%;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {background:red; left:50%; top:0%;}
+	25%  {background:yellow; left:calc(100% - 258px); top:calc(50% - 110px);}
+	50%  {background:blue; left:calc(50% - 258px); top:calc(100% - 110px);}
+	75%  {background:green; left:0%; top:calc(50% - 110px);}
+	100% {background:red; left:calc(50% - 258px); top:0%;}
+}
+</style>
+</head>
+<body>
+<div class="move" id="move">
+    <div class="indexPc">
+        <a href="http://zhaosheng.zzdl.com/Querydan.html">
+            <img src="./pc.jpg" alt="">
+        </a>
+        <div class="closeIcon" id="closeIcon">关闭</div>
+    </div>
+</div>
+
+<script>
+	$(function(){
+		$("#closeIcon").click(function(){
+			$("#move").hide()
+		})
+
+		$("#move").mouseover(function(){
+			$(this).css({"animationPlayState":"paused"})
+		})
+
+		$("#move").mouseout(function(){
+			$(this).css({"animationPlayState":"running"})
+		})
+	})
+</script>
+
+</body>
+</html>
