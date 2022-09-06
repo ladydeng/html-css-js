@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner img{
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+
+        .news-list {
+            background: lightpink;
+            padding: 50px;
+        }
+
+        .news-item {
+            width: 50%;
+            height: auto;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .news-item h3 {
+            color: #333333;
+            font-size: 16px;
+        }
+
+        .news-item p {
+            color: #828282;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-item:after {
+            content: "";
+            border-bottom: 2px solid #94070a;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+            transition: all 0.2s ease-out 0s;
+            transform: scaleX(0);
+        }
+
+        /* .news-item:before {
+            content: "";
+            border-left: 2px solid #94070a;
+            height: 25px;
+            transition: all 0.2s ease-out 0s;
+            transform: scaleY(0);
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform-origin: center top;
+        } */
+
+        /* .news-item:hover:before {
+            transform: none;
+        } */
+
+        .news-item:hover:after {
+            transform: none;
+        }
+
+        /* .news-list {
+            position: fixed;
+            left: 0%;
+            top: 100%;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            overflow: hidden;
+            transition: top 0.7s cubic-bezier(0.5, 0, 0.2, 1) 0s;
+            z-index: 1;
+            overflow: auto;
+            outline: none;
+        }
+        .showdiv {
+            top: 0;
+            transform:none;opacity:1;visibility:visible;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <img src="./sucai.jpg" alt="">
+    </div>
+    <div class="news-list">
+        <div class="news-item">
+            <h3> “凡编必审”，首批中小学数字教材国家标准将实施 </h3>
+            <p> 原标题：数字教材应遵循“凡编必审”基本原则
+                首批中小学数字教材国家标准将于2022年11月1日实施。按照新标准的要求，数字教材中单一视频的时长有“限制”，小学阶段不超20分钟，中学阶段不超25分钟。且数字教材应“凡编必审”，比一般网络出版物有着更高的出版质量要求。
+                2017年以来，我国教材建设、教育信息化和儿童青少年近视防控方面的新政策频出。国家市场监督管理总局、国家标准化管理委员会于 ... </p>
+        </div>
+        <div class="news-item">
+            <h3> “凡编必审”，首批中小学数字教材国家标准将实施 </h3>
+            <p> 原标题：数字教材应遵循“凡编必审”基本原则
+                首批中小学数字教材国家标准将于2022年11月1日实施。按照新标准的要求，数字教材中单一视频的时长有“限制”，小学阶段不超20分钟，中学阶段不超25分钟。且数字教材应“凡编必审”，比一般网络出版物有着更高的出版质量要求。
+                2017年以来，我国教材建设、教育信息化和儿童青少年近视防控方面的新政策频出。国家市场监督管理总局、国家标准化管理委员会于 ... </p>
+        </div>
+    </div>
+    
+
+    <script>
+        window.onscroll = function() {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            // console.log("滚动距离" + scrollTop);
+            // document.getElementsByClassName("news-list")[0].className = "showdiv"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="Oform">
+        注册账号：
+        <input type="text" name="userName">
+        <br> 密码：
+        <input type="text" name="passWord">
+        <br> 手机：
+        <input type="text" name="tel">
+        <br> email：
+        <input type="text" name="email">
+        <br> 姓名：
+        <input type="text" name="names">
+        <br>
+        <input type="submit" name="submit" value="提交">
+    </form>
+</body>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<!-- validate.js引用 -->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<!-- validate中文提示文字 -->
+<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
+<!-- <script src="./ueditor/third-party/jquery-1.10.2.js"></script> -->
+<!-- <script src="./validate.min.js"></script> -->
+<script>
+
+    /*
+    基本格式大致如下
+    html格式：
+    <form id="Oform">
+    <input type="text" name="userNmae">
+    <input type="submit" name="submit" value="提交">
+    </form>
+    
+    js格式：
+    $(表单Id).validate({
+    rules:{
+    需要验证的input框的name名：{
+    验证方法api（具体看完档详解）
+    }
+    },
+    message:{
+    需要验证的input框的name名：{
+    验证方法api："提示的内容"
+    }
+    }，
+    验证全部通过执行的函数
+    submitHandler: function () {
+    alert("提交啦！")
+    }
+    })
+    还有许多额外的方法，见文档，写的很详细，不一一介绍了
+    */
+
+
+
+
+    // 验证手机
+    $.validator.addMethod("isMobile", function (value, element) {
+        // 输入内容长度
+        var length = value.length;
+        // 手机验证正则
+        var regPhone = /^1([3578]\d|4[57])\d{8}$/;
+
+        return this.optional(element) || (length == 11 && regPhone.test(value));
+    }, "请正确填写您的手机号码");
+    // 验证中文
+    $.validator.addMethod("isChar", function (value, element) {
+        var length = value.length;
+        var regName = /[^\u4e00-\u9fa5]/g;
+        return this.optional(element) || !regName.test(value);
+    }, "请正确格式的姓名(暂支持汉字)");
+
+    $('#Oform').validate({
+        rules: {
+            userName: {
+                required: true,
+                range: [2, 10],
+            },
+            passWord: {
+                required: true,
+                minlength: 6
+            },
+            tel: {
+                required: true,
+                isMobile: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            names: {
+                required: true,
+                isChar: true,
+            }
+        },
+        message: {
+            userName: {
+                required: "请填写账号",
+                range: "账号长度至少2个，至多10个"
+            },
+            passWord: {
+                required: "请填写密码",
+                minlength: "密码长度最少为6位"
+            },
+            tel: {
+                required: "请填写手机号码",
+            },
+            email: {
+                required: "请填写邮箱",
+                email: "邮箱填写有误"
+            },
+            names: {
+                required: "请填写姓名",
+            }
+        },
+        submitHandler: function () {
+            alert("提交啦！")
+        }
+    })
+</script>
+
+</html>

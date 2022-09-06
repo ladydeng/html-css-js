@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid red;
+        }
+
+        .item{
+            width: 80px;
+            height: 80px;
+            background: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input  value="0" class="num">
+    <input  value="0" class="num">
+    <input  value="0" class="num">
+
+    <div class="box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+    </div>
+
+
+
+    <script src="./jquery-1.10.2.min.js"></script>
+    <script src="./Anime.js"></script>
+    <script>
+        $(function(){
+            anime({
+                targets: '.box .item',
+                scale: [
+                    {value: .1, easing: 'easeOutSine', duration: 500},
+                    {value: 1, easing: 'easeInOutQuad', duration: 1200}
+                ],
+                delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+            });
+
+            anime({
+                autoplay:true,
+                targets: '.num',
+                value: [0, 100],
+                round: 1,
+                easing: 'easeInOutExpo'
+            });
+        })
+        
+    </script>
+</body>
+</html>
