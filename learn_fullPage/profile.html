@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/profile.css">
+</head>
+<body>
+    <div class="myRoot">
+        <div class="pcBox">
+            <div class="pcHeader">
+                <h3>顶部导航1</h3>
+            </div>
+            <div class="pcSwiper">
+                <!-- pc轮播图 -->
+                <h3>pc swiper</h3>
+            </div>
+        </div>
+        <div class="moBox">
+            <div class="moHeader">
+                <h3>顶部导航2</h3>
+            </div>
+            <div class="moSwiper">
+                <!-- 手机端轮播图 -->
+                <h3>mo swiper</h3>
+            </div>
+            <div class="newsBox">
+                <h3>新闻详情</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="./static/js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function(){
+            $(".pcHeader").css({"top": 0})
+        })
+        
+        // 获取
+        const innerWidth = window.innerWidth
+        
+
+        // 添加事件监听
+        document.addEventListener('wheel', function(event) {
+            if(window.innerWidth < 980) return  //手机端不需要动画滑动效果
+
+            var scrollTop1 = $(".pcBox").scrollTop()
+            var scrollTop2 = $(".moBox").scrollTop()
+            console.log(scrollTop1, scrollTop2)
+            if (event.deltaY < 0 && scrollTop2 == 0) {
+                console.log('鼠标向上滑动');
+
+                // $(".moBox").css({"top": "100%"})
+
+                // $(".pcHeader").css({"top": 0})
+                // $(".moHeader").css({"top": "-80px"})
+
+                $(".moBox").removeClass("active")
+
+                $(".pcHeader").removeClass("active")
+                $(".moHeader").removeClass("active")
+
+            }
+            
+            if (event.deltaY > 0) {
+                console.log('鼠标向下滑动');
+                
+                // $(".moBox").css({"top": 0})
+                $(".moBox").addClass("active")
+                setTimeout(function(){
+                    // $(".pcHeader").css({"top": "-80px"})
+                    // $(".moHeader").css({"top": 0})
+
+                    $(".pcHeader").addClass("active")
+                    $(".moHeader").addClass("active")
+                }, 300)
+
+            }
+        });
+        
+    </script>
+</body>
+</html>

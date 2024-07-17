@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<script>
+    var tongji = [
+        {
+            name:"第一个里程碑",
+            status: "已结束",
+            startTime:"2023-02-02",
+            endTime:"2023-02-04",
+            kafajihua:[
+                {
+                    jihua:"第一个开发计划",
+                    author:"陈金明",
+                    status:"已结束",
+                    startTime:"2023-02-02",
+                    endTime:"2023-02-04",
+                    dealStatus:"已解决",
+                    sjStartTime:"2023-02-02",
+                    sjEndTime:"2023-02-04",
+                },
+                {
+                    jihua:"第二个开发计划",
+                    author:"陈金明",
+                    status:"已结束",
+                    startTime:"2023-02-02",
+                    endTime:"2023-02-04",
+                    dealStatus:"已解决",
+                    sjStartTime:"2023-02-02",
+                    sjEndTime:"2023-02-04",
+                }
+            ]
+        },
+        {
+            name:"第二个里程碑",
+            status: "已结束",
+            startTime:"2023-02-02",
+            endTime:"2023-02-04",
+            kafajihua:[
+                {
+                    jihua:"第二一个开发计划",
+                    author:"陈金明",
+                    status:"已结束",
+                    startTime:"2023-02-02",
+                    endTime:"2023-02-04",
+                    dealStatus:"已解决",
+                    sjStartTime:"2023-02-02",
+                    sjEndTime:"2023-02-04",
+                },
+                {
+                    jihua:"第二二个开发计划",
+                    author:"陈金明",
+                    status:"已结束",
+                    startTime:"2023-02-02",
+                    endTime:"2023-02-04",
+                    dealStatus:"已解决",
+                    sjStartTime:"2023-02-02",
+                    sjEndTime:"2023-02-04",
+                }
+            ]
+        }
+    ]
+    console.log(tongji)
+</script>
+<body>
+    <div class="oaRoot">
+        <h3>郑州蓝创科技有限公司智慧党建项目</h3>
+        <table border="1">
+            <tr>
+                <th style="width: 200px;">里程碑名称</th>
+                <th>阶段状态</th>
+                <th>计划开始时间</th>
+                <th>计划结束时间</th>
+                <th style="width: 200px;">需求标题</th>
+                <th>指派人</th>
+                <th>状态</th>
+                <th>计划开始时间</th>
+                <th>计划结束时间</th>
+                <th>解决状态</th>
+                <th>实际开始时间</th>
+                <th>实际结束时间</th>
+            </tr>
+            <!-- div每个里程碑 -->
+            <div>
+                <tr>
+                    <td rowspan="3">走进全球最大“人造太阳"建设现场（一）</td>
+                    <td rowspan="3"><button class="greenBg">已结束</button></td>
+                    <td rowspan="3">2024/02/28</td>
+                    <td rowspan="3">2024/03/01</td>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button class="greenBg">已解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+                <tr>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button class="greenBg">已解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+                <tr>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button>未解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+            </div>
+            <div>
+                <tr>
+                    <td rowspan="3">走进全球最大“人造太阳"建设现场（一）</td>
+                    <td rowspan="3"><button>进行中</button></td>
+                    <td rowspan="3">2024/02/28</td>
+                    <td rowspan="3">2024/03/01</td>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button class="greenBg">已解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+                <tr>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button class="greenBg">已解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+                <tr>
+                    <td>第一次开发</td>
+                    <td>陈金明</td>
+                    <td><button class="greenBg">已结束</button></td>
+                    <td>2024/01/01</td>
+                    <td>2024/03/08</td>
+                    <td><button>未解决</button></td>
+                    <td>2024/03/01</td>
+                    <td>2024/03/08</td>
+                </tr>
+            </div>
+            
+        </table>
+
+        <h3>项目需求清单</h3>
+        <table border="1">
+            <tr>
+                <th style="width: 240px;">标题</th>
+                <th>需求来源</th>
+                <th>需求类型</th>
+                <th>指派人</th>
+                <th>计划完成时间</th>
+                <th>解决状态</th>
+                <th>实际解决时间</th>
+                <th>是否确认</th>
+                <th>确认人</th>
+                <th>确认时间</th>
+                <th>创建人</th>
+            </tr>
+            <tr>
+                <td>新功能开发调整</td>
+                <td>调研</td>
+                <td>新增</td>
+                <td>张桑</td>
+                <td>2024/04/05</td>
+                <td><button>未解决</button></td>
+                <td>2024/04/08</td>
+                <td><button class="greenBg">已确认</button></td>
+                <td>小牛</td>
+                <td>2024/04/09</td>
+                <td>小牛</td>
+            </tr>
+            <tr>
+                <td>新功能开发调整</td>
+                <td>调研</td>
+                <td>新增</td>
+                <td>张桑</td>
+                <td>2024/04/05</td>
+                <td><button>未解决</button></td>
+                <td>2024/04/08</td>
+                <td><button class="greenBg">已确认</button></td>
+                <td>小牛</td>
+                <td>2024/04/09</td>
+                <td>小牛</td>
+            </tr>
+            <tr>
+                <td>新功能开发调整</td>
+                <td>调研</td>
+                <td>新增</td>
+                <td>张桑</td>
+                <td>2024/04/05</td>
+                <td><button>未解决</button></td>
+                <td>2024/04/08</td>
+                <td><button class="greenBg">已确认</button></td>
+                <td>小牛</td>
+                <td>2024/04/09</td>
+                <td>小牛</td>
+            </tr>
+        </table>
+
+        <h3>项目整体测试问题</h3>
+        <table border="1">
+            <tr>
+                <th style="width: 400px;">标题</th>
+                <th>bug类型</th>
+                <th>严重程度</th>
+                <th>创建人</th>
+                <th>指派人</th>
+                <th>截止时间</th>
+                <th>解决状态</th>
+                <th>解决时间</th>
+            </tr>
+            <tr>
+                <td>结果查询报错</td>
+                <td>报错</td>
+                <td>严重</td>
+                <td>蒙莉</td>
+                <td>陈金明</td>
+                <td>2024/02/08</td>
+                <td><button class="greenBg">已解决</button></td>
+                <td>2024/02/29</td>
+            </tr>
+            <tr>
+                <td>结果查询报错</td>
+                <td>报错</td>
+                <td>严重</td>
+                <td>蒙莉</td>
+                <td>陈金明</td>
+                <td>2024/02/08</td>
+                <td><button>未解决</button></td>
+                <td>2024/02/29</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+}
+
+.myRoot{
+    /* 根元素 */
+}
+
+.pcBox{
+
+}
+
+h3, p{
+    width: 100%;
+    height: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pcHeader{
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0));
+
+    position: fixed;
+    top: -80px;
+
+    text-align: center;
+    line-height: 80px;
+
+    transition: top 0.7s ease-out 0s;
+}
+
+.pcSwiper{
+    width: 100vw;
+    height: 100vh;
+    background: lightcoral;
+}
+
+
+.moBox{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 100px 0;
+    overflow-y: scroll;
+
+    background: lightseagreen;
+
+    position: fixed;
+    top: 100%;
+    transition: top 1s;
+}
+
+.moHeader{
+    width: 100%;
+    height: 80px;
+    background: lightcyan;
+
+    position: fixed;
+    top: -80px;
+
+    text-align: center;
+    line-height: 80px;
+
+    transition: top 0.7s ease-in 0s;
+}
+
+.moSwiper{
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid;
+}
+
+.newsBox{
+    width: 80%;
+    height: 1200px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid;
+}
+
+/* 动态控制类 */
+.moBox.active{
+    top: 0;
+}
+.pcHeader.active{
+    top: -80px;
+}
+.moHeader.active{
+    top: 0;
+}
+
+@media screen and (max-width: 980px){
+    .pcBox{
+        display: none;
+    }
+
+    .moBox{
+        transition: top 0s;
+        top: 0;
+    }
+
+    .moHeader{
+        position: sticky;
+        top: 0;
+    }
+
+    .moBox{
+        padding: 0;
+    }
+}
