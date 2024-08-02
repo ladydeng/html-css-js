@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打开微信小程序</title>
+</head>
+<body>
+    <button onclick="toWeixin()">打开微信小程序</button>
+    <script src="./jquery-1.12.4.min.js"></script>
+    <script>
+        function toWeixin(){
+            // 方法一：URL Scheme-明文
+            // 缺点：部分安卓手机自带浏览器打不开微信小程序，电脑端能打开
+            // 证明文档：https://developers.weixin.qq.com/community/develop/doc/000864a32d8d8088761efe30051400
+            window.location.href = "weixin://dl/business/?appid=appid&path=pages/index/index"
+
+            // 方法二：URL Link-加密，由D:\01_*\learn_nodejs\wx.js生成
+            // 缺点：只能在手机上（任意手机都可以）打开，电脑端打不开
+            // window.location.href = "https://wxaurl.cn/1bbtcdc0qpu"
+        }
+
+    </script>
+</body>
+</html>

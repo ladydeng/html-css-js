@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./imgyz.css">
+</head>
+
+<body>
+    <div id="yzRoot">
+        <div class="minbtn"><button type="button"><span>图片不好看? 换一张吧!</span></button></div>
+    </div>
+
+    <script type="text/javascript" src="./imgyz.js"></script>
+    <script type="text/javascript">
+        // 绘制验证码
+        imgver();
+        var sxbtn = document.querySelector(".minbtn button");
+        sxbtn.onclick = function () {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

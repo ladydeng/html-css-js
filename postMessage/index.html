@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页标题</title>
+</head>
+
+<body>
+    <div class="post-message-section">
+        <p class="desc">网页向应用发送消息，注意：小程序端应用会在此页面后退时接收到消息。</p>
+        <div class="btn-list">
+            <button class="btn btn-red" type="button" id="postMessage" onclick="handlePostMessage()">postMessage</button>
+        </div>
+    </div>
+
+    <!-- uni 的 SDK -->
+    <script type="text/javascript" src="./hybrid_html_uni.webview.1.5.5.js"></script>
+    <script type="text/javascript">
+        console.log("load success")
+        // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
+        document.addEventListener('UniAppJSBridgeReady', function () {
+            console.log("UniAppJSBridgeReady加载完毕，开始发送消息")
+            uni.postMessage({
+                data: {
+                    code: 1,
+                    message: "加载完成"
+                }
+            });
+        });
+
+        function handlePostMessage(){
+            // h5、app通信方式
+            uni.postMessage({
+                data: {
+                    action: '999999999999999'
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
